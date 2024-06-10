@@ -1,0 +1,26 @@
+
+db.emp.insertOne({firstName: "", -----}); (single data insert)
+
+db.emp.insertMany([{firstName: "",---},{firstName: "",---},{firstName: "",---},{}]); (multiple data insert)
+
+db.emp.updateOne({firstName:"anish"},{$set:{salary:2000}}); (single data update) 
+
+db.emp.updateMany({salary:{$lt:25000}}, {$set:{department:"admin"}}) (multiple data update)
+
+db.emp.find(); (find all data);
+
+db.emp.find().limit(10); (find data with limit)
+
+db.emp.find().limit(10).skip(9); (find data with limit or skip)
+
+db.emp.find().sort({salary: -1}); (find data desc order)
+
+db.emp.find().sort({salary: 1}); (find data asc order)
+
+db.emp.find().sort({salary: -1}).limit(1).skip(1); {second hig salary}
+
+db.emp.find().sort({salary: 1}).limit(1).skip(1); (second low salary)
+
+db.emp.deleteOne({name:""}); (delete one record)
+
+db.emp.deleteMany({$lt:20000}); (delete multiple record wiht $lt operator)
